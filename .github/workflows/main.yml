@@ -4,6 +4,12 @@ on:
   #schedule:
   #  - cron: "0 */12 * * *" # each 12 hours
   workflow_dispatch
+    inputs:
+      description: 'Log level'
+      required: true
+      default: 'debug'
+    tags:
+      descrition: 'Test scenario tags'
   
 jobs:
   get-feed:
@@ -20,5 +26,7 @@ jobs:
 
       - name: Update Notion Feed
         run: |
+          echo "Log level: ${{ github.event.inputs.logLevel }}"
+          echo "Tags: ${{ github.event.inputs.tags }}"
           curl -o index.js https://raw.githubusercontent.com/bucan3ve/notion-feeder/build/dist/index.js
           node index.js
