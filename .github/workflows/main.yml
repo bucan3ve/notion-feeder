@@ -1,9 +1,10 @@
 name: Get Feed
 
 on:
-  schedule:
-    - cron: "0 */12 * * *" # each 12 hours
-
+  #schedule:
+  #  - cron: "0 */12 * * *" # each 12 hours
+  workflow_dispatch
+  
 jobs:
   get-feed:
     runs-on: ubuntu-latest
