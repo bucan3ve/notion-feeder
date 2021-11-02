@@ -5,11 +5,12 @@ on:
   #  - cron: "0 */12 * * *" # each 12 hours
   workflow_dispatch
     inputs:
-      description: 'Log level'
-      required: true
-      default: 'debug'
-    tags:
-      descrition: 'Test scenario tags'
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'debug'
+      tags:
+        descrition: 'Test scenario tags'
   
 jobs:
   get-feed:
