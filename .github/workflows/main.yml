@@ -3,14 +3,14 @@ name: Get Feed
 on:
   #schedule:
   #  - cron: "0 */12 * * *" # each 12 hours
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Log level'
+        description: 'Log level'     
         required: true
         default: 'debug'
       tags:
-        descrition: 'Test scenario tags'
+        description: 'Test scenario tags'  
   
 jobs:
   get-feed:
